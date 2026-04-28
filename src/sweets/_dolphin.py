@@ -75,6 +75,10 @@ class DolphinOptions(BaseModel):
             " (6, 12), outputs end up at 60 x 60 m."
         ),
     )
+    reference_point: tuple[int, int] | None = Field(
+    default=None,
+    description="Reference point (row, col) used if performing a time series inversion.",
+    )
     ministack_size: int = Field(
         default=10,
         ge=2,
@@ -252,6 +256,7 @@ def build_displacement_config(
             "timeseries_options": {
                 "run_inversion": options.run_timeseries,
                 "run_velocity": options.run_timeseries,
+                "reference_point":options.reference_point,
                 "apply_mask_to_timeseries": True,  # more commonly requested
             },
             "output_options": output_options,
