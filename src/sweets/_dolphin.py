@@ -75,9 +75,11 @@ class DolphinOptions(BaseModel):
             " (6, 12), outputs end up at 60 x 60 m."
         ),
     )
-    reference_point: tuple[int, int] = Field(
-        default=(None,None),
-        description="Reference point (row, col) used if performing a time series inversion.",
+    from typing import Optional
+
+    reference_point: Optional[tuple[int, int]] = Field(
+        default=None,
+        description="Reference point (row, col) used for time series inversion.",
     )
     ministack_size: int = Field(
         default=10,
