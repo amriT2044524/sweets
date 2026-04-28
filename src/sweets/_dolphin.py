@@ -75,8 +75,6 @@ class DolphinOptions(BaseModel):
             " (6, 12), outputs end up at 60 x 60 m."
         ),
     )
-    from typing import Optional
-
     reference_point: tuple[int, int] = Field(
         default=(6, 12),
         description="Reference point (row, col) used for time series inversion.",
