@@ -75,7 +75,7 @@ class DolphinOptions(BaseModel):
             " (6, 12), outputs end up at 60 x 60 m."
         ),
     )
-    reference_point: tuple[int, int] | None = Field(
+    reference_point: tuple[int, int] = Field(
         default=None,
         description="Reference point (row, col) used if performing a time series inversion.",
     )
