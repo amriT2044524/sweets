@@ -76,7 +76,7 @@ class DolphinOptions(BaseModel):
         ),
     )
     reference_point: tuple[int, int] = Field(
-        default=None,
+        default=(None,None),
         description="Reference point (row, col) used if performing a time series inversion.",
     )
     ministack_size: int = Field(
